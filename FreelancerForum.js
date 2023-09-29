@@ -9,7 +9,7 @@ const freelancers = [
   { name: "Prof. Goose", price: 72, occupation: "pilot" },
 ];
 
-const displayedFreelancers = []; // Initialize an empty array
+const displayedFreelancers = [];
 
 function extractData(freelancers) {
   const names = [];
@@ -40,7 +40,6 @@ function render(freelancers) {
   });
 }
 
-// Call the function to render the initial data
 render(freelancers);
 
 function generateRandomFreelancer() {
@@ -57,21 +56,17 @@ function displayRandomFreelancer() {
     clearInterval(intervalId);
   } else {
     displayedFreelancers.push(randomFreelancer);
-    // Calculate and display the updated average starting price
+
     const updatedAveragePrice =
       calculateAverageStartingPrice(displayedFreelancers).toFixed(2);
     console.log("Updated Average Starting Price:", updatedAveragePrice);
 
-    // Update the HTML elements with the data
     updateFreelancerData(randomFreelancer);
     updateAverageStartingPrice(updatedAveragePrice);
   }
 }
 
-function calculateAverageStartingPrice(freelancers) {
-  // Calculate the average starting price here
-  // You need to implement this function
-}
+function calculateAverageStartingPrice(freelancers) {}
 
 function updateFreelancerData(freelancer) {
   const freelancerDataDiv = document.getElementById("freelancerData");
